@@ -1,9 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import f from '../assets/b2.png'
 import { Link } from 'react-router-dom';
 
 function Home() {
   const [Menu,setMenu] = useState(false);
+  useEffect(() => {
+    // Rotate the ring infinitely
+    gsap.to(".ring", {
+      duration: 10,
+      rotation: 360,
+      repeat: -1,
+      ease: "linear"
+    });
+  }, []);
 return(<>
 
 <div className='w-screen bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900'>
@@ -30,12 +39,23 @@ return(<>
  <Link to="/experience" className='py-2 hover:bg-gray-700 rounded  hover:border-b-2 hover:border-white' onClick={() => setMenuOpen(false)}>Experience</Link>
  <Link to="/contact" className='py-2 hover:bg-gray-700 rounded  hover:border-b-2 hover:border-white' onClick={() => setMenuOpen(false)}>Contact</Link>
 </div> )}
- <div className='mx-auto w-fit mt-5'>
-  <img src={f} className='mx-auto w-64 rounded-full pt-3'/>
-      <div className="text-center mt-4 mb-4">
-        <h1 className="text-5xl font-bold bg-gradient-rainbow text-transparent bg-clip-text animate-gradient">Hi, I'm Prathmesh!</h1>
-       <div className='w-1/2 mx-auto pt-2 pb-4 border-2  rounded-3xl mt-2 mb-4'>
-            <p className="mt-2 text-xl text-white ">
+ <div className=' mx-auto w-fit mt-5``'>
+ <div className="relative mx-auto w-fit mt-5  ">
+      {/* Rotating Ring */}
+      <div className="shadow-2xl shadow-white ring absolute top-1/2 left-1/2 w-64 h-64 border-4 border-green-400 rounded-full transform -translate-x-1/2  -translate-y-1/2">
+      </div>
+
+      {/* Profile Image */}
+      <img
+        src={f}
+        alt="Profile"
+        className="relative mx-auto w-64 h-64 rounded-full object-cover z-10"
+      />
+    </div>
+ <div className="text-center mt-7 mb-4 ">
+        <h1 className="  text-5xl font-bold bg-gradient-rainbow text-transparent bg-clip-text animate-gradient">Hi, I'm Prathmesh!</h1>
+       <div className='w-4/5 mx-auto pt-2 pb-4 border-2  rounded-3xl mt-2 mb-4'>
+            <p className="mt-2 text-xl  font-medium text-transparent bg-gradient-to-r bg-clip-text from-orange-700 via-white to-green-600">
             A passionate developer skilled in React, Flask, Python, and building modern web applications. I love solving complex problems and creating impactful projects.
             </p>
           </div>
