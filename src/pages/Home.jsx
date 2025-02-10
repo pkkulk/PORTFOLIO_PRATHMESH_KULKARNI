@@ -33,7 +33,7 @@ return(<>
 
 <div className='w-screen bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900'>
 <div className="lg:hidden p-4 flex justify-between">  
-  <h1 ref={titleRef} className="text-white font-bold text-2xl">
+  <h1 ref={titleRef} className="text-white font-medium text-2xl">
       Portfolio
     </h1>
         <button onClick={() => setMenu(!Menu)} className="text-white text-2xl">
@@ -92,7 +92,7 @@ return(<>
 <section id="about" className="py-16">
   <div className="container mx-auto text-center">
     <h2 className="text-2xl text-white font-bold mb-4">About Me</h2>
-    <p className="text-white w-full mx-auto p-4">
+    <p className="text-white w-full lg:w-1/2 mx-auto p-4">
       I'm Prathmesh, a software developer passionate about creating impactful applications with modern tools. I specialize in building clean, functional, and visually appealing projects.
     </p>
   </div>
@@ -101,40 +101,45 @@ return(<>
   <div className="container mx-auto text-center">
     <h2 className="text-2xl font-bold mb-4 text-white">My Skills</h2>
     <div className="flex justify-center flex-wrap gap-6">
-      <div className="p-4 bg-gray-100 rounded shadow">
+      <div className="p-4 w-36 bg-gray-100 rounded shadow">
         <h3 className="font-semibold">Frontend</h3>
         <p>React, Tailwind CSS</p>
       </div>
-      <div className="p-4 bg-gray-100 rounded shadow">
+      <div className="p-4 w-36 bg-gray-100 rounded shadow">
         <h3 className="font-semibold">Backend</h3>
-        <p>Node.js, Flask</p>
+        <p>Node.js, Flask</p>s
       </div>
-      <div className="p-4 bg-gray-100 rounded shadow">
+      <div className="p-4 w-36 bg-gray-100 rounded shadow">
         <h3 className="font-semibold">Databases</h3>
-        <p>MongoDB, MySQL</p>
+        <p>MongoDB MySQL</p>
       </div>
-      <div className="p-4 bg-gray-100 rounded shadow">
-        <h3 className="font-semibold">Data analysis</h3>
-        <p> Python (NumPy, Pandas, Matplotlib, Seaborn), SQL for data queries, Power BI/Tableau, Excel,</p>
+      <div className="p-4 w-36 bg-gray-100 rounded shadow">
+        <h3 className="font-semibold">AI/ML</h3>
+        <p>Tensorflow.keras</p>
+      </div>
+      <div className="p-4 bg-gray-100 rounded shadow mx-8">
+        <h3 className="font-semibold m-2">Data analysis</h3>
+        <p> Python (NumPy, Pandas, Matplotlib, Seaborn), SQL for data queries</p>
       </div>
     </div>
   </div>
 </section>
 <section id="projects" className="py-16 ">
-  <div className="grid container mx-auto text-center">
+  <div className="grid container mx-auto text-center justify-center">
+
     <h2 className="text-2xl font-bold mb-4 text-white">My Projects</h2>
-    <div className="grid grid-cols-2 gap-4 m-5">
-      <div className="p-4 bg-white rounded shadow">
-        <h3 className="font-semibold">Book-store</h3>
+    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 m-5 ml-8 lg:gap-4">
+      <div className="p-4 w-36  mx-auto bg-white rounded shadow  ">
+        <h3 className="font-semibold">Hospital Food Management</h3>
         <p>A platform for buying books online.</p>
-        <a href="#" className="text-blue-500 hover:underline">View Project</a>
+        <a href="https://mern-stack-hospital-food-management-system-frontend.vercel.app" className="text-blue-500 hover:underline">View Project</a>
       </div>
-      <div className="p-4 bg-white rounded shadow">
+      <div className="p-4 w-36 bg-white rounded shadow">
         <h3 className="font-semibold">Crypto Tracker</h3>
         <p>A React app to track cryptocurrency prices.</p>
         <a href="#" className="text-blue-500 hover:underline">View Project</a>
       </div>
-      <div className="p-4 bg-white rounded shadow">
+      <div className="p-4 w-36 bg-white rounded shadow">
         <h3 className="font-semibold">EmailSlicer</h3>
         <p>A tool to extract information from emails.</p>
         <a href="#" className="text-blue-500 hover:underline">View Project</a>
