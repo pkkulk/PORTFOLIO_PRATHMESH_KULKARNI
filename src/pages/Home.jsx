@@ -1,8 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+
 import f from '../assets/b2.png'
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const titleRef = useRef(null);
+
+ 
   const [Menu,setMenu] = useState(false);
   useEffect(() => {
     // Rotate the ring infinitely
@@ -12,12 +16,26 @@ function Home() {
       repeat: -1,
       ease: "linear"
     });
+    const letters = titleRef.current.textContent.split("");
+    titleRef.current.innerHTML = letters.map((letter) => `<span>${letter}</span>`).join("");
+    gsap.from(titleRef.current.children, {
+      opacity: 0,
+      y: 20, // Move letters upwards
+      duration: 0.9 , // Delay between letters
+      repeat: -1, 
+      stagger: 0.1, // Delay each letter by 0.1s
+
+      yoyo: true, // Makes animation go back and forth
+      ease: "power2.out",
+    });
   }, []);
 return(<>
 
 <div className='w-screen bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900'>
-<div className="lg:hidden p-4 flex justify-between">
-        <h1 className='text-white font-bold'>Portfolio</h1>
+<div className="lg:hidden p-4 flex justify-between">  
+  <h1 ref={titleRef} className="text-white font-bold text-2xl">
+      Portfolio
+    </h1>
         <button onClick={() => setMenu(!Menu)} className="text-white text-2xl">
   {Menu ? "✖" : "☰"}
 </button>
@@ -32,7 +50,7 @@ return(<>
    <h1 className='flex-1 mx-auto font-bold text-white hover:text-gray-400'><Link to="/contact" >Contact</Link></h1>
 </div> 
 {Menu &&(
- <div className='absolute top-16 right-4 w-64 bg-gray-900 text-white rounded-lg shadow-lg flex flex-col text-center p-4'>
+ <div className=' z-30 absolute top-16 right-4 w-64 bg-gray-900 text-white rounded-lg shadow-lg flex flex-col text-center p-4'>
  <Link to="/" className='py-2 hover:bg-gray-700 rounded hover:border-b-2 hover:border-white' onClick={() => setMenuOpen(false)}>Home</Link>
  <Link to="/about" className='py-2 hover:bg-gray-700 rounded  hover:border-b-2 hover:border-white' onClick={() => setMenuOpen(false)}>About</Link>
  <Link to="/project" className='py-2 hover:bg-gray-700 rounded  hover:border-b-2 hover:border-white' onClick={() => setMenuOpen(false)}>Projects</Link>
@@ -74,7 +92,7 @@ return(<>
 <section id="about" className="py-16">
   <div className="container mx-auto text-center">
     <h2 className="text-2xl text-white font-bold mb-4">About Me</h2>
-    <p className="text-white w-1/2 mx-auto">
+    <p className="text-white w-full mx-auto p-4">
       I'm Prathmesh, a software developer passionate about creating impactful applications with modern tools. I specialize in building clean, functional, and visually appealing projects.
     </p>
   </div>
