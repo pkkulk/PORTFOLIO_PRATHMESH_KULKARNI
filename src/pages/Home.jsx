@@ -127,22 +127,27 @@ return(<>
 <section id="projects" className="py-16 ">
   <div className="grid container mx-auto text-center justify-center">
 
-    <h2 className="text-2xl font-bold mb-4 text-white">My Projects</h2>
-    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 m-5 ml-8 lg:gap-4">
-      <div className="p-4 w-36  mx-auto bg-white rounded shadow  ">
+    <h2 className="text-2xl justify-between font-bold mb-4 text-white">My Projects</h2>
+    <div className="grid grid-cols-2  lg:grid-cols-3  m-5 gap-2 lg:gap-4 ">
+      <div className="p-4 w-36  bg-white rounded shadow  ">
         <h3 className="font-semibold">Hospital Food Management</h3>
         <p>A platform for buying books online.</p>
         <a href="https://mern-stack-hospital-food-management-system-frontend.vercel.app" className="text-blue-500 hover:underline">View Project</a>
       </div>
-      <div className="p-4 w-36 bg-white rounded shadow">
-        <h3 className="font-semibold">Crypto Tracker</h3>
-        <p>A React app to track cryptocurrency prices.</p>
-        <a href="#" className="text-blue-500 hover:underline">View Project</a>
+      <div className="p-4 w-36  bg-white rounded shadow  ">
+        <h3 className="font-semibold">Crypto Tracker using Reactjs</h3>
+        <p>It fetches prizes of cryptos.</p>
+        <a href="https://mern-stack-hospital-food-management-system-frontend.vercel.app" className="text-blue-500 hover:underline">View Project</a>
       </div>
-      <div className="p-4 w-36 bg-white rounded shadow">
-        <h3 className="font-semibold">EmailSlicer</h3>
-        <p>A tool to extract information from emails.</p>
-        <a href="#" className="text-blue-500 hover:underline">View Project</a>
+      <div className="p-4 w-36  bg-white rounded shadow  ">
+        <h3 className="font-semibold">Travel Recommendation System</h3>
+        <p>It recommend travel destination based on your budget</p> 
+        <a href="https://mern-stack-hospital-food-management-system-frontend.vercel.app" className="text-blue-500 hover:underline">View Project</a>
+      </div>
+      <div className="p-4 w-36  bg-white rounded shadow  ">
+        <h3 className="font-semibold">Hospital Food Management</h3>
+        <p>A platform for buying books online.</p>
+        <a href="https://mern-stack-hospital-food-management-system-frontend.vercel.app" className="text-blue-500 hover:underline">View Project</a>
       </div>
     </div>
   </div>
