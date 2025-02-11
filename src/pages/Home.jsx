@@ -88,7 +88,7 @@ return(<>
     <a href="#contact" className="px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600">Contact</a>
   </div>
 </div> 
-<div className='w-fuk mx-7 rounded-3xl mt-5 border-4 border-white'>
+<div className='w-4/5 mx-auto rounded-3xl mt-5 border-4 border-white'>
 <section id="about" className="py-16">
   <div className="container mx-auto text-center">
     <h2 className="text-2xl text-white font-bold mb-4">About Me</h2>
@@ -128,7 +128,7 @@ return(<>
   <div className="grid container mx-auto text-center justify-center">
 
     <h2 className="text-2xl justify-between font-bold mb-4 text-white">My Projects</h2>
-    <div className="grid grid-cols-2  lg:grid-cols-3  m-5 gap-2 lg:gap-4 ">
+    <div className="grid grid-cols-2  lg:grid-cols-3  m-3 gap-2 lg:gap-4 ">
       <div className="p-4 w-36  bg-white rounded shadow  ">
         <h3 className="font-semibold">Hospital Food Management</h3>
         <p>A platform for buying books online.</p>
