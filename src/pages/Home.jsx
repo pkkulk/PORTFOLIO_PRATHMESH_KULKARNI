@@ -137,12 +137,12 @@ return(<>
       <div className="p-4 w-36  bg-white rounded shadow  ">
         <h3 className="font-semibold">Crypto Tracker using Reactjs</h3>
         <p>It fetches prizes of cryptos.</p>
-        <a href="https://mern-stack-hospital-food-management-system-frontend.vercel.app" className="text-blue-500 hover:underline">View Project</a>
+        <a href="https://github.com/pkkulk/cryptocurrency-tracker-using-reactjs-v2" className="text-blue-500 hover:underline">View Project</a>
       </div>
-      <div className="p-4 w-36  bg-white rounded shadow  ">
+      <div className="p-4 w-36 lg:w-40 bg-white rounded shadow  ">
         <h3 className="font-semibold">Travel Recommendation System</h3>
         <p>It recommend travel destination based on your budget</p> 
-        <a href="https://mern-stack-hospital-food-management-system-frontend.vercel.app" className="text-blue-500 hover:underline">View Project</a>
+        <a href="https://github.com/pkkulk/Travel_recommendation_system_for_India" className="text-blue-500 hover:underline">View Project</a>
       </div>
       <div className="p-4 w-36  bg-white rounded shadow  ">
         <h3 className="font-semibold">Hospital Food Management</h3>
