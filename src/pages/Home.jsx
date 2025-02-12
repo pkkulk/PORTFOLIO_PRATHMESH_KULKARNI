@@ -39,6 +39,7 @@ function Home() {
       y: 20, // Move letters upwards
       duration: 0.3 , // Delay between letters
       repeat: -1, 
+      repeatDelay: 10,
       stagger: 0.1, // Delay each letter by 0.1s
  // Makes animation go back and forth
       ease: "power2.out",
@@ -123,7 +124,7 @@ return(<>
                          <SiTensorflow className='w-full lg:h-24 sm:h-9'/>
                       </motion.div>
                      </div>
-                 <div className='relative w-20 lg:top-40 lg:left-96 left-32 top-36'> 
+                 <div className='relative w-20 lg:top-40 lg:left-96 left-32 top-32'> 
                     <motion.div
                     className="w-full absolute top-0 left-0 text-green-500 text-4xl "
                  animate={{ y: [0, -15, 0] }}
