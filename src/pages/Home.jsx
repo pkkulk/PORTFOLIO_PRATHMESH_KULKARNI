@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaPython, FaDatabase } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiTensorflow } from "react-icons/si";
 import f from '../assets/b2.png'
 import { Link } from 'react-router-dom';
 
@@ -81,9 +83,19 @@ return(<>
                      >
                          <FaReact  className='w-full lg:h-24 sm:h-9 '/>
                       </motion.div>
+                     </div> 
+                     <div className='relative w-20  lg:top-40  lg:left-80 top-72 '> 
+                   
+                     <motion.div
+                   className="w-full absolute -top-10 left-10 text-blue-500 text-4xl"
+                      animate={{ y: [0, -15, 0] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                     >
+                         <RiTailwindCssFill  className='w-full lg:h-24 sm:h-9 '/>
+                      </motion.div>
                      </div>
 
-                 <div className='relative w-20 lg:top-40 lg:left-36  top-40'> 
+                 <div className='relative w-20 lg:top-40 lg:left-36  top-36'> 
                     <motion.div
                     className="w-full absolute top-0 -right-0 text-green-500 text-4xl "
                  animate={{ y: [0, -15, 0] }}
@@ -102,13 +114,21 @@ return(<>
                          <FaPython  className='w-full lg:h-24 sm:h-9'/>
                       </motion.div>
                      </div>
-
-                 <div className='relative w-20 lg:top-40 lg:left-96 left-32 top-40'> 
+                     <div className='relative w-20  lg:top-48 lg:left-36 top-72 left-14'> 
+                   <motion.div
+                   className="w-full absolute -top-10 left-10 text-blue-500 text-4xl"
+                      animate={{ y: [0, -15, 0] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                     >
+                         <SiTensorflow className='w-full lg:h-24 sm:h-9'/>
+                      </motion.div>
+                     </div>
+                 <div className='relative w-20 lg:top-40 lg:left-96 left-32 top-36'> 
                     <motion.div
-                    className="w-full absolute top-0 -right-0 text-green-500 text-4xl "
+                    className="w-full absolute top-0 left-0 text-green-500 text-4xl "
                  animate={{ y: [0, -15, 0] }}
                    transition={{ repeat: Infinity, duration: 2 }}>
-                    <FaDatabase className='w-full lg:h-24 h-8' />
+                    <FaDatabase className='w-full lg:h-24 h-9' />
                       </motion.div>
                 </div>   
         </div>   
