@@ -21,7 +21,7 @@ export default function Contact(){
             <div className="flex items-center gap-4">
               <FaLinkedin className="text-2xl text-blue-400" />
               <a href="https://www.linkedin.com/in/prathmesh-kulkarni-57972" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-blue-300">
-                linkedin.com/in/prathmesh-kulkarni-57972
+                linkedin.com/in/prathmeshkulkarni
               </a>
             </div>
     
