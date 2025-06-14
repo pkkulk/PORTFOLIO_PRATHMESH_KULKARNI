@@ -3,14 +3,76 @@ import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaPython, FaDatabase } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiTensorflow } from "react-icons/si";
-import f from '../assets/b2.png'
+import f from '../assets/ff.png'
 import { Link } from 'react-router-dom';
+import c from "../assets/crypto.png"
+import f1 from "../assets/expens.png"
+import f2 from "../assets/mcq.png"
+import f5 from "../assets/heart.png"
+import p from "../assets/b2.png"
 
+import f4 from "../assets/secureslack.png"
+import f3 from "../assets/ipl.png"
 function Home() {
   const titleRef = useRef(null);
 
   const titleRef2 = useRef(null);
- 
+  const [current, setCurrent] = useState(0);
+
+ const projects = [
+  {
+    title: "Hospital Food Management",
+    description: "A platform for managing hospital food delivery...",
+    image: f,
+    link: "https://mern-stack-hospital-food-management-system-frontend.vercel.app",
+  },
+  {
+    title: "Crypto Tracker using Reactjs",
+    description: "It fetches prices of cryptos.",
+    image: c,
+    link: "https://github.com/pkkulk/cryptocurrency-tracker-using-reactjs-v2",
+  },
+  {
+    title: "Travel Expense Tracker",
+    description: "Tracks travel expenses and gives insights.",
+    image: f1,
+    link: "https://github.com/pkkulk/Travel_recommendation_system_for_India",
+  },
+  {
+    title: "Online MCQ Examination System",
+    description: "Platform for online tests using Java and JDBC.",
+    image: f2,
+    link: "https://github.com/pkkulk/online-examination-system-using-java",
+  },
+   {
+    title: "Ipl Dashboard ",
+    description: "platform for analyze ipl data players performance and team performance pe year ",
+    image: f3,
+    link: "https://ipl-dashboard2.vercel.app/teams",
+  },
+  {
+    title: "Secure slack",
+    description: "for cyber news ,for any cyber providing company with chatbot  ",
+    image: f4,
+    link: "https://secure-slack-frontend.vercel.app/blog",
+  },
+   {
+    title: "Heart failure detection",
+    description: "for detecting failure of heart based on user data like cholestrol,BP,chest pain ",
+    image: f5,
+    link: "https://deployedheartfailure-jkwf8r9tujutnt9beinksw.streamlit.app/",
+  },
+];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prevIndex) => (prevIndex + 1) % projects.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+
+  const project = projects[current];
   const [Menu,setMenu] = useState(false);
   useEffect(() => {
     // Rotate the ring infinitely
@@ -143,7 +205,7 @@ return(<>
       </div>
       {/* Profile Image */}
       <img
-        src={f}
+        src={p}
         alt="Profile"
         className="relative mx-auto w-64 h-64 rounded-full object-cover z-10"
       />
@@ -158,89 +220,94 @@ return(<>
           </div>
        </div>
        <hr></hr>
-       <div className="text-center mt-8">
-  <h2 className="text-xl font-semibold text-white">Explore My Portfolio</h2>
-  <div className="flex justify-center gap-4 mt-4">
-    <a href="#about" className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">About</a>
-    <a href="#skills" className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Skills</a>
-    <a href="#projects" className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600">Projects</a>
-    <a href="#contact" className="px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600">Contact</a>
-  </div>
-</div> 
-<div className='w-4/5 mx-auto rounded-3xl mt-5 border-4 border-white'>
-<section id="about" className="py-16">
-  <div className="container mx-auto text-center">
-    <h2 className="text-2xl text-white font-bold mb-4">About Me</h2>
-    <p className="text-white w-full lg:w-1/2 mx-auto p-4">
-      I'm Prathmesh, a software developer passionate about creating impactful applications with modern tools. I specialize in building clean, functional, and visually appealing projects.
-    </p>
-  </div>
-</section>
-<section id="skills" className="py-16 ">
-  <div className="container mx-auto text-center">
-    <h2 className="text-2xl font-bold mb-4 text-white">My Skills</h2>
-    <div className="flex justify-center flex-wrap gap-6">
-      <div className="p-4 w-36 bg-gray-100 rounded shadow">
-        <h3 className="font-semibold">Frontend</h3>
-        <p>React, Tailwind CSS</p>
+        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen p-8">
+      {/* Navigation Buttons */}
+      <div className="text-center mt-4 mb-12">
+        <h2 className="text-3xl font-bold mb-6">🚀 Explore My Portfolio</h2>
+        <div className="flex justify-center gap-4 flex-wrap">
+          <a href="#projects" className="px-5 py-2 bg-blue-600 rounded-full hover:bg-blue-700 transition">Projects</a>
+          <a href="#skills" className="px-5 py-2 bg-green-600 rounded-full hover:bg-green-700 transition">Skills</a>
+          <a href="#about" className="px-5 py-2 bg-purple-600 rounded-full hover:bg-purple-700 transition">About</a>
+          <a href="#contact" className="px-5 py-2 bg-pink-600 rounded-full hover:bg-pink-700 transition">Contact</a>
+        </div>
       </div>
-      <div className="p-4 w-36 bg-gray-100 rounded shadow">
-        <h3 className="font-semibold">Backend</h3>
-        <p>Node.js, Flask</p>s
-      </div>
-      <div className="p-4 w-36 bg-gray-100 rounded shadow">
-        <h3 className="font-semibold">Databases</h3>
-        <p>MongoDB MySQL</p>
-      </div>
-      <div className="p-4 w-36 bg-gray-100 rounded shadow">
-        <h3 className="font-semibold">AI/ML</h3>
-        <p>Tensorflow.keras</p>
-      </div>
-      <div className="p-4 bg-gray-100 rounded shadow mx-8">
-        <h3 className="font-semibold m-2">Data analysis</h3>
-        <p> Python (NumPy, Pandas, Matplotlib, Seaborn), SQL for data queries</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="projects" className="py-16 ">
-  <div className="grid container mx-auto text-center justify-center">
-
-    <h2 className="text-2xl justify-between font-bold mb-4 text-white">My Projects</h2>
-    <div className="grid grid-cols-2  lg:grid-cols-3  m-3 gap-2 lg:gap-4 ">
-      <div className="p-4 w-36  bg-white rounded shadow  ">
-        <h3 className="font-semibold">Hospital Food Management</h3>
-        <p>A platform for buying books online.</p>
-        <a href="https://mern-stack-hospital-food-management-system-frontend.vercel.app" className="text-blue-500 hover:underline">View Project</a>
-      </div>
-      <div className="p-4 w-36  bg-white rounded shadow  ">
-        <h3 className="font-semibold">Crypto Tracker using Reactjs</h3>
-        <p>It fetches prizes of cryptos.</p>
-        <a href="https://github.com/pkkulk/cryptocurrency-tracker-using-reactjs-v2" className="text-blue-500 hover:underline">View Project</a>
-      </div>
-      <div className="p-4 w-36 lg:w-40 bg-white rounded shadow  ">
-        <h3 className="font-semibold">Travel Recommendation System</h3>
-        <p>It recommend travel destination based on your budget</p> 
-        <a href="https://github.com/pkkulk/Travel_recommendation_system_for_India" className="text-blue-500 hover:underline">View Project</a>
-      </div>
-      <div className="p-4 w-36  bg-white rounded shadow  ">
-        <h3 className="font-semibold">Online Mcq Examination System</h3>
-        <p>platform for giving online testusing java and JDBC connetion.</p>
-        <a href="https://github.com/pkkulk/online-examination-system-using-java" className="text-blue-500 hover:underline">View Project</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="contact" className="py-16 text-white">
-  <div className="container mx-auto text-center">
-    <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
-    <p className="text-white   mb-4">Let's connect and create something amazing together!</p>
-    <a href="mailto:your-email@example.com" className="px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600">
-      Get in Touch
+ <section id="projects" className="text-center mb-20">
+  <h2 className="text-2xl font-semibold mb-8 border-b-2 inline-block border-purple-500 text-white">
+    My Projects
+  </h2>
+  
+  <div className="bg-white text-gray-900 p-8 max-w-xl mx-auto rounded-xl shadow-lg transition duration-300">
+    <img
+      src={projects[current].image}
+      alt={projects[current].title}
+      className="w-full h-64 p-2  rounded mb-4"
+    />
+    <h3 className="text-xl font-semibold mb-2">{projects[current].title}</h3>
+    <p className="mb-4">{projects[current].description}</p>
+    <a
+      href={projects[current].link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block text-blue-600 hover:underline font-medium"
+    >
+      View Project →
     </a>
   </div>
+
+  <div className="flex justify-center gap-3 mt-6">
+    {projects.map((_, i) => (
+      <button
+        key={i}
+        onClick={() => setCurrent(i)}
+        className={`w-4 h-4 rounded-full ${i === current ? "bg-blue-600" : "bg-gray-400"} transition`}
+      />
+    ))}
+  </div>
 </section>
-</div>
+
+      {/* About */}
+      <section id="about" className="text-center mb-20">
+        <h2 className="text-2xl font-semibold mb-4 border-b-2 inline-block border-blue-500">About Me</h2>
+        <p className="max-w-2xl mx-auto text-lg text-gray-300 mt-4 leading-relaxed">
+          I'm <strong className="text-white">Prathmesh</strong>, a passionate software developer who loves building modern, impactful web applications. I focus on performance, clean code, and creating smooth user experiences.
+        </p>
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="text-center mb-20">
+        <h2 className="text-2xl font-semibold mb-8 border-b-2 inline-block border-green-500">My Skills</h2>
+        <div className="flex flex-wrap justify-center gap-6">
+          {[
+            ["Frontend", "React, Tailwind CSS"],
+            ["Backend", "Node.js, Flask"],
+            ["Databases", "MongoDB, MySQL"],
+            ["AI/ML", "Tensorflow, Keras"],
+            ["Data Analysis", "Python, Pandas, Matplotlib, SQL"],
+          ].map(([title, desc]) => (
+            <div key={title} className="bg-white text-gray-900 p-6 rounded-xl shadow-md w-64 hover:scale-105 transition">
+              <h3 className="font-bold text-lg mb-2">{title}</h3>
+              <p>{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects */}
+     
+      {/* Contact */}
+      <section id="contact" className="text-center">
+        <h2 className="text-2xl font-semibold mb-4 border-b-2 inline-block border-pink-500">Contact Me</h2>
+        <p className="text-lg text-gray-300 mb-6">
+          Let's connect and create something amazing together!
+        </p>
+        <a
+          href="mailto:your-email@example.com"
+          className="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
+        >
+          Get in Touch
+        </a>
+      </section>
+    </div>
      </div>
 </div>
   </>
