@@ -1,6 +1,6 @@
 export default function Experience() {
     return (
-      <div className="bg-gradient-to-r from-slate-600 to-lime-500 via-sky-400 text-white py-10">
+      <div className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 text-white py-10">
         <div className="container mx-auto px-6 max-w-4xl">
           <h1 className="text-3xl font-bold text-center mb-6">My Journey</h1>
           <p className="text-center font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white to-red-400 mb-10">
@@ -44,12 +44,18 @@ export default function Experience() {
               <li>
                 <strong>Python Basics:</strong> Learned the fundamentals of Python programming.
               </li>
+              <li>
+                <strong>Math for ML:</strong> Learned mathmeatics which are needed for machine learning from deeplearning.ai
+              </li>
             </ul>
           </div>
   
-          {/* Industrial Training */}
+          {/* Industrial Training  */}
           <div className="experience-item border border-white rounded-xl p-6 bg-white/10">
-            <h2 className="text-2xl font-semibold">Industrial Training</h2>
+            <h2 className="text-2xl font-semibold">Industrial Training and Internshiip</h2>
+            <p className="mt-3">
+              Completed Internship  at <strong>Edunet foundation </strong>, where I learned how to develope ml model using tensorflow and scikit learne
+            </p>
             <p className="mt-3">
               Completed training at <strong>Bright Career Infotech</strong>, where I learned web development technologies.
             </p>
