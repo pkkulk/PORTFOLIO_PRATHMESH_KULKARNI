@@ -6,6 +6,17 @@ export default function Experience() {
           <p className="text-center font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white to-red-400 mb-10">
             As a beginner, I’m building my skills and learning through projects, internships, and certifications.
           </p>
+          <div className="experience-item mb-8 border border-white rounded-xl p-6 bg-white/10">
+            <h2 className="text-2xl font-semibold">Leadership Role</h2>
+            <ul className="list-disc pl-5 mt-3 space-y-2">
+              <li>
+                <strong>Technical Head – [aIDEAS Association]</strong> Leading the tech initiative of assocation and managing technical events, workshops.
+              </li>
+              <li>
+                <strong>Social Media Head – TPSA </strong>Managing social presence, content strategy, event promotions, and audience engagement across platforms
+              </li>
+            </ul>
+          </div>
   
           {/* Academic Projects */}
           <div className="experience-item mb-8 border border-white rounded-xl p-6 bg-white/10">

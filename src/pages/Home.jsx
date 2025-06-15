@@ -269,7 +269,8 @@ return(<>
       <section id="about" className="text-center mb-20">
         <h2 className="text-2xl font-semibold mb-4 border-b-2 inline-block border-blue-500">About Me</h2>
         <p className="max-w-2xl mx-auto text-lg text-gray-300 mt-4 leading-relaxed">
-          I'm <strong className="text-white">Prathmesh</strong>, a passionate software developer who loves building modern, impactful web applications. I focus on performance, clean code, and creating smooth user experiences.
+          I'm <strong className="text-white">Prathmesh</strong>, a passionate software developer who loves building modern, impactful web applications. I focus on performance, clean code, and creating smooth user experiences  
+      <Link to="/about" className='text-blue-500' >  more...</Link>
         </p>
       </section>
 
@@ -301,7 +302,7 @@ return(<>
           Let's connect and create something amazing together!
         </p>
         <a
-          href="mailto:your-email@example.com"
+          href="mailto:prathmeshkulkarni312@gmail.com"
           className="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
         >
           Get in Touch
