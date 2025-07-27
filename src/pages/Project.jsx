@@ -5,11 +5,17 @@ import f1 from "../assets/expens.png";
 import f2 from "../assets/mcq.png";
 import f5 from "../assets/heart.png"
 import p from "../assets/b2.png"
+import p1 from "../assets/aideas.png"
 
 import f4 from "../assets/secureslack.png"
 import f3 from "../assets/ipl.png"
 const projects = [
-  {
+   {
+      title: "aIDEAS association website",
+      description: "for showing the past events of association,doing the technical task ..",
+      image: p1,
+      link: "https://aideas-website-new.vercel.app/",
+    },{
     title: "Hospital Food Management",
     image: f,
     description: "A platform for managing food in hospitals.",
