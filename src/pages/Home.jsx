@@ -124,7 +124,7 @@ return(<>
 </button>
       </div>  
 
-      <div className='hidden lg:flex bg-gradient-to-r from-slate-400 via-slate-900 to-slate-400  p-4 border-b-2 mx-auto border-gray-50'>
+      <div className='hidden sticky z-40 top-0 lg:flex bg-gradient-to-r from-slate-400 via-slate-900 to-slate-400  p-4 border-b-2 mx-auto border-gray-50'>
 
    <h1 className='flex-1 mx-auto font-bold text-white hover:text-gray-400'><Link to="/" >Home</Link></h1>
    <h1 className='flex-1 mx-auto font-bold text-white hover:text-gray-400'><Link to="/about" >about</Link></h1>
@@ -220,7 +220,7 @@ return(<>
         <h1 className="  text-5xl font-bold bg-gradient-rainbow text-transparent bg-clip-text animate-gradient">Hi, I'm Prathmesh!</h1>
        <div className='w-4/5 mx-auto pt-2 pb-4 border-2  rounded-3xl mt-2 mb-4'>
             <p  className="mt-2 text-xl  font-medium text-transparent bg-gradient-to-r bg-clip-text from-orange-700 via-white to-green-600">
-          <h1 ref={titleRef2} > A passionate developer skilled in React, Flask, Python, and building modern web applications. I love solving complex problems and creating impactful projects.
+          <h1 ref={titleRef2} > A passionate developer skilled in nextjs, nodejs Python, and building modern web applications. I love solving complex problems and creating impactful projects.
           </h1>  </p>
           </div>
        </div>
@@ -321,4 +321,4 @@ return(<>
  
 }
 
-export default Home
+export default Home;
