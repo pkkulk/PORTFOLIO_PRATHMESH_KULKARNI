@@ -196,45 +196,14 @@ function Home() {
 
       {/* Main Content */}
       <main className='max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8'>
-
-        {/* Hero Section */}
-        {/* Added flex-col-reverse for mobile to show image first */}
-        <motion.div
-          className='flex flex-col-reverse lg:flex-row items-center justify-between min-h-[70vh] gap-12'
+ <motion.div
+          className='relative z-10 flex flex-col lg:flex-row items-center justify-between min-h-[70vh] gap-12'
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Profile & Icon Area (Order changed for mobile) */}
-          <div className='lg:w-1/2 relative flex justify-center items-center w-full h-[350px] sm:h-[400px] mb-8 lg:mb-0'>
-            <motion.div
-              className="relative w-64 h-64 sm:w-72 sm:h-72"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-            >
-              <motion.div
-                className="absolute top-0 left-0 w-full h-full border-4 border-cyan-500 rounded-full shadow-2xl shadow-cyan-500/50"
-                {...ringMotionProps}
-              />
-              <img
-                src={p}
-                alt="Profile"
-                className="w-full h-full object-cover rounded-full p-2 bg-slate-900 border-4 border-slate-900"
-              />
-            </motion.div>
-
-            {/* Floating Icons - Adjusted for smaller screens by reducing font size and shifting slightly */}
-            <motion.div {...iconMotionProps} className="absolute top-0 left-5 text-5xl text-blue-500 lg:text-6xl lg:left-10"><FaReact /></motion.div>
-            <motion.div {...iconMotionProps} transition={{ ...iconMotionProps.transition, y: { ...iconMotionProps.transition.y, duration: 2.5 } }} className="absolute top-16 right-0 text-5xl text-green-500 lg:text-6xl lg:right-5"><FaNodeJs /></motion.div>
-            <motion.div {...iconMotionProps} transition={{ ...iconMotionProps.transition, y: { ...iconMotionProps.transition.y, duration: 1.8 } }} className="absolute bottom-16 left-0 text-5xl text-yellow-500 lg:text-6xl lg:left-5"><FaPython /></motion.div>
-            <motion.div {...iconMotionProps} transition={{ ...iconMotionProps.transition, y: { ...iconMotionProps.transition.y, duration: 2.2 } }} className="absolute bottom-0 right-10 text-5xl text-teal-400 lg:text-6xl lg:right-20"><RiTailwindCssFill /></motion.div>
-            <motion.div {...iconMotionProps} transition={{ ...iconMotionProps.transition, y: { ...iconMotionProps.transition.y, duration: 2.8 } }} className="absolute top-5 right-36 text-5xl text-red-500 lg:text-6xl lg:right-40"><SiTensorflow /></motion.div>
-            <motion.div {...iconMotionProps} transition={{ ...iconMotionProps.transition, y: { ...iconMotionProps.transition.y, duration: 1.5 } }} className="absolute bottom-32 right-0 text-5xl text-gray-400 lg:text-6xl lg:right-5"><FaDatabase /></motion.div>
-          </div>
-
-          {/* Text Content */}
-          <div className='lg:w-1/2 text-center lg:text-left'>
+          {/* Text */}
+          <div className='lg:w-1/2 text-center lg:text-left order-last lg:order-none'>
             <motion.h1 className="text-5xl sm:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400"
               variants={itemVariants}
             >
@@ -255,9 +224,35 @@ function Home() {
               <Link to="/contact" className="px-6 py-3 bg-transparent border-2 border-green-500 text-green-500 rounded-lg text-lg font-semibold hover:bg-green-500 hover:text-white transition shadow-lg">Get In Touch</Link>
             </motion.div>
           </div>
-        </motion.div>
 
-        {/* Separator */}
+          {/* Profile Image & Icons */}
+          <div className='lg:w-1/2 relative flex justify-center items-center w-full h-[350px] sm:h-[400px] mb-8 lg:mb-0 order-first lg:order-none'>
+            <motion.div
+              className="relative w-64 h-64 sm:w-72 sm:h-72"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              <motion.div
+                className="absolute top-0 left-0 w-full h-full border-4 border-cyan-500 rounded-full shadow-2xl shadow-cyan-500/50"
+                {...ringMotionProps}
+              />
+              <img
+                src={p}
+                alt="Profile"
+                className="w-full h-full object-cover rounded-full p-2 bg-slate-900 border-4 border-slate-900"
+              />
+            </motion.div>
+
+            {/* Floating Icons */}
+            <motion.div {...iconMotionProps} className="absolute top-0 left-5 text-5xl text-blue-500 lg:text-6xl lg:left-10"><FaReact /></motion.div>
+            <motion.div {...iconMotionProps} transition={{ ...iconMotionProps.transition, y: { ...iconMotionProps.transition.y, duration: 2.5 } }} className="absolute top-16 right-0 text-5xl text-green-500 lg:text-6xl lg:right-5"><FaNodeJs /></motion.div>
+            <motion.div {...iconMotionProps} transition={{ ...iconMotionProps.transition, y: { ...iconMotionProps.transition.y, duration: 1.8 } }} className="absolute bottom-16 left-0 text-5xl text-yellow-500 lg:text-6xl lg:left-5"><FaPython /></motion.div>
+            <motion.div {...iconMotionProps} transition={{ ...iconMotionProps.transition, y: { ...iconMotionProps.transition.y, duration: 2.2 } }} className="absolute bottom-0 right-10 text-5xl text-teal-400 lg:text-6xl lg:right-20"><RiTailwindCssFill /></motion.div>
+            <motion.div {...iconMotionProps} transition={{ ...iconMotionProps.transition, y: { ...iconMotionProps.transition.y, duration: 2.8 } }} className="absolute top-5 right-36 text-5xl text-red-500 lg:text-6xl lg:right-40"><SiTensorflow /></motion.div>
+            <motion.div {...iconMotionProps} transition={{ ...iconMotionProps.transition, y: { ...iconMotionProps.transition.y, duration: 1.5 } }} className="absolute bottom-32 right-0 text-5xl text-gray-400 lg:text-6xl lg:right-5"><FaDatabase /></motion.div>
+          </div>
+        </motion.div>
         <hr className='my-16 border-gray-700' />
 
         {/* Content Sections */}
