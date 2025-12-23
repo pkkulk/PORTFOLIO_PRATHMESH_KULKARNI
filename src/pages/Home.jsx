@@ -6,6 +6,7 @@ import { SiTensorflow, SiNextdotjs, SiMongodb, SiDocker, SiPostgresql } from "re
 import { Link } from 'react-router-dom';
 
 // Assets
+
 import f from '../assets/ff.png'
 import c from "../assets/crypto.png"
 import f1 from "../assets/expens.png"
@@ -48,56 +49,81 @@ function Home() {
   const [isPaused, setIsPaused] = useState(false);
 
   // Projects Array - All 8 included, descriptions refined from Resume where applicable
-  const projects = [
-    {
-      title: "aIDEAS Association Website",
-      description: "Technical Head for managing technical tasks and showcasing association events.",
-      image: p1,
-      link: "https://aideas-website-new.vercel.app/",
-    },
-    {
-      title: "Hospital Food Management",
-      description: "MERN stack platform with role-based access, reducing food waste by 30%.",
-      image: f,
-      link: "https://mern-stack-hospital-food-management-system-frontend.vercel.app",
-    },
-    {
-      title: "IPL Analytics Dashboard",
-      description: "Interactive dashboard using Next.js and Recharts with 40% faster query times.",
-      image: f3,
-      link: "https://ipl-dashboard2.vercel.app/teams",
-    },
-    {
-      title: "Heart Failure Detection",
-      description: "AI-powered clinical support system using scikit-learn and Streamlit.",
-      image: f5,
-      link: "https://deployedheartfailure-jkwf8r9tujutnt9beinksw.streamlit.app/",
-    },
-    {
-      title: "Secure Slack & Cyber News",
-      description: "Cybersecurity portal featuring real-time news updates and an AI-powered chatbot.",
-      image: f4,
-      link: "https://secure-slack-frontend.vercel.app/blog",
-    },
-    {
-      title: "Crypto Real-time Tracker",
-      description: "Monitoring live cryptocurrency prices and market trends using high-frequency APIs.",
-      image: c,
-      link: "https://github.com/pkkulk/cryptocurrency-tracker-using-reactjs-v2",
-    },
-    {
-      title: "Travel Expense Tracker",
-      description: "Tracks travel expenses and provides algorithmic insights for budget management.",
-      image: f1,
-      link: "https://github.com/pkkulk/Travel_recommendation_system_for_India",
-    },
-    {
-      title: "Online MCQ Examination",
-      description: "Robust platform for conducting online tests built using Java and JDBC.",
-      image: f2,
-      link: "https://github.com/pkkulk/online-examination-system-using-java",
-    },
-  ];
+ const projects = [
+  {
+    title: "aIDEAS Association Website",
+    description:
+      "Led and developed the official association website to manage technical initiatives, showcase events, and improve student engagement. Implemented responsive UI and content-driven architecture.",
+    tech: "React, Tailwind CSS, Vercel",
+    impact: "Improved visibility of association activities",
+    image: p1,
+    link: "https://aideas-website-new.vercel.app/",
+  },
+  {
+    title: "Hospital Food Management System",
+    description:
+      "Designed a MERN-based platform to manage hospital food orders, inventory, and staff roles with real-time dashboards and secure access control.",
+    tech: "MongoDB, Express, React, Node.js",
+    impact: "Reduced food wastage by 30%",
+    image: f,
+    link: "https://mern-stack-hospital-food-management-system-frontend.vercel.app",
+  },
+  {
+    title: "IPL Analytics Dashboard",
+    description:
+      "Built an interactive analytics dashboard to visualize IPL team and player performance across seasons using optimized APIs.",
+    tech: "Next.js, Recharts, MongoDB",
+    impact: "40% faster query response time",
+    image: f3,
+    link: "https://ipl-dashboard2.vercel.app/teams",
+  },
+  {
+    title: "Heart Failure Detection System",
+    description:
+      "Developed an AI-powered clinical decision support system to predict heart failure risk using medical parameters.",
+    tech: "Python, scikit-learn, Streamlit",
+    impact: "Real-time ML predictions",
+    image: f5,
+    link: "https://deployedheartfailure-jkwf8r9tujutnt9beinksw.streamlit.app/",
+  },
+  {
+    title: "Secure Slack & Cyber News",
+    description:
+      "Created a cybersecurity-focused platform delivering real-time cyber news with an integrated AI chatbot for user queries.",
+    tech: "React, Node.js, NLP",
+    impact: "Improved cyber awareness",
+    image: f4,
+    link: "https://secure-slack-frontend.vercel.app/blog",
+  },
+  {
+    title: "Crypto Real-Time Tracker",
+    description:
+      "Built a real-time cryptocurrency tracking application displaying live prices, trends, and market capitalization using external APIs.",
+    tech: "React, REST APIs",
+    impact: "Live market monitoring",
+    image: c,
+    link: "https://github.com/pkkulk/cryptocurrency-tracker-using-reactjs-v2",
+  },
+  {
+    title: "Travel Expense Tracker",
+    description:
+      "Implemented a system to track travel expenses and generate insights to help users manage budgets effectively.",
+    tech: "JavaScript, Data Analysis",
+    impact: "Better expense planning",
+    image: f1,
+    link: "https://github.com/pkkulk/Travel_recommendation_system_for_India",
+  },
+  {
+    title: "Online MCQ Examination System",
+    description:
+      "Developed a robust examination platform enabling secure online tests with automated evaluation and result management.",
+    tech: "Java, JDBC, MySQL",
+    impact: "Automated assessment process",
+    image: f2,
+    link: "https://github.com/pkkulk/online-examination-system-using-java",
+  },
+];
+
 
   // Carousel Logic with Pause
   useEffect(() => {
@@ -109,10 +135,10 @@ function Home() {
   }, [projects.length, isPaused]);
 
   return (
-    <div className='min-h-screen bg-slate-900 text-white selection:bg-cyan-500/30 overflow-x-hidden'>
+    <div className='min-h-screen bg-slate-900 text-white selection:bg-cyan-500/30 '>
       
       {/* --- Navigation --- */}
-      <nav className='sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg'>
+    <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-lg supports-[backdrop-filter]:bg-slate-900/60">
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex justify-between items-center h-20'>
             {/* Logo */}
@@ -131,13 +157,7 @@ function Home() {
                 </Link>
               ))}
               {/* Resume Button */}
-              <a 
-                href="/Prathameshkulkarni_cv7.3.pdf" 
-                download 
-                className="flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full text-sm font-bold hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all"
-              >
-                <FaDownload className="text-xs" /> RESUME
-              </a>
+            
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -166,15 +186,12 @@ function Home() {
                   {item}
                 </Link>
               ))}
-              <a href="/Prathameshkulkarni_cv7.3.pdf" download className="block px-6 py-4 text-cyan-400 font-bold hover:bg-slate-700">
-                Download Resume
-              </a>
             </motion.div>
           )}
         </AnimatePresence>
       </nav>
-
-      <main className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+<div className='overflow-x-hidden'>
+      <main className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 '>
         
         {/* --- New Hero Section --- */}
        {/* --- IMPROVED HERO SECTION --- */}
@@ -205,14 +222,49 @@ function Home() {
               <span className="text-purple-400"> Machine Learning</span> solutions. 
             </p>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-5">
-              <a href="#projects" className="px-8 py-4 bg-white text-slate-900 rounded-xl font-black text-lg hover:bg-cyan-400 transition-all transform hover:-translate-y-1">
-                View Projects
-              </a>
-              <Link to="/contact" className="px-8 py-4 border-2 border-slate-700 rounded-xl font-black text-lg hover:border-cyan-400 hover:text-cyan-400 transition-all">
-                Contact Me
-              </Link>
-            </div>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-5 mt-6">
+
+  <Link
+    to="/project"
+    className="
+      px-8 py-4 
+      bg-white text-slate-900 
+      rounded-xl 
+      font-extrabold text-lg
+      shadow-lg
+      hover:bg-cyan-400 hover:shadow-cyan-500/30
+      transition-all duration-300
+      transform hover:-translate-y-1
+    "
+  >
+    View Projects
+  </Link>
+
+  {/* Secondary CTA */}
+  <a
+    href="/Prathameshkulkarni.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      px-8 py-4
+      rounded-xl
+      font-extrabold text-lg
+      text-cyan-400
+      border-2 border-cyan-400
+      backdrop-blur-sm
+      hover:bg-cyan-400 hover:text-slate-900
+      hover:shadow-[0_0_25px_rgba(6,182,212,0.45)]
+      transition-all duration-300
+      flex items-center gap-3
+      transform hover:-translate-y-1
+    "
+  >
+    <FaDownload className="text-base" />
+    Resume
+  </a>
+
+</div>
+
           </motion.div>
 
           {/* Right: Visual Orbit Animation (Top on Mobile, Right on Desktop) */}
@@ -283,59 +335,123 @@ function Home() {
         </section>
 
         {/* --- Featured Projects Section (With Pause on Hover) --- */}
-        <motion.section id="projects" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="py-20">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold inline-block border-b-4 border-purple-500 pb-2">Featured Projects</h2>
-          </div>
+       <motion.section
+  id="projects"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  variants={sectionVariants}
+  className="py-24"
+>
+  {/* Section Header */}
+  <div className="text-center mb-20">
+    <h2 className="text-4xl font-extrabold inline-block relative pb-3">
+      Featured Projects
+      <span className="absolute left-0 bottom-0 w-full h-1 bg-purple-500 rounded-full" />
+    </h2>
+    <p className="mt-4 text-gray-400 text-lg">
+      Real-world projects showcasing full-stack and AI capabilities
+    </p>
+  </div>
 
-          <div 
-            className="relative max-w-4xl mx-auto"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4 }}
-                className="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl flex flex-col md:flex-row"
-              >
-                {/* Image */}
-                <div className="md:w-1/2 h-64 md:h-auto">
-                  <img 
-                    src={projects[current].image} 
-                    alt={projects[current].title} 
-                    className="w-full h-full object-cover" 
-                  />
-                </div>
-                {/* Content */}
-                <div className="md:w-1/2 p-8 flex flex-col justify-center">
-                  <h3 className="text-2xl font-bold text-cyan-400 mb-4">{projects[current].title}</h3>
-                  <p className="text-gray-300 mb-8 text-lg leading-relaxed">{projects[current].description}</p>
-                  <div>
-                    <a href={projects[current].link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 bg-purple-600 rounded-xl hover:bg-purple-700 transition font-bold group">
-                      Explore Project <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+  {/* Carousel Wrapper */}
+  <div
+    className="relative max-w-5xl mx-auto"
+    onMouseEnter={() => setIsPaused(true)}
+    onMouseLeave={() => setIsPaused(false)}
+  >
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={current}
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -40 }}
+        transition={{ duration: 0.45, ease: "easeInOut" }}
+        className="bg-slate-800/90 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl flex flex-col md:flex-row"
+      >
+        {/* Image */}
+        <div className="md:w-1/2 bg-slate-900 flex items-center justify-center p-6">
+  <img
+    src={projects[current].image}
+    alt={projects[current].title}
+    className="max-h-[320px] w-auto object-contain rounded-xl shadow-lg"
+  />
+</div>
 
-            {/* Navigation Dots */}
-            <div className="flex justify-center gap-3 mt-8">
-              {projects.map((_, i) => (
-                <button 
-                  key={i} 
-                  onClick={() => setCurrent(i)} 
-                  className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-8 bg-purple-500" : "w-2 bg-slate-700 hover:bg-slate-600"}`}
-                  aria-label={`View project ${i + 1}`}
-                />
+
+        {/* Content */}
+        <div className="md:w-1/2 p-8 sm:p-10 flex flex-col justify-center">
+          <h3 className="text-2xl font-bold text-cyan-400 mb-4">
+            {projects[current].title}
+          </h3>
+
+          <p className="text-gray-300 mb-6 text-lg leading-relaxed">
+            {projects[current].description}
+          </p>
+
+          {/* Tech Stack Pills */}
+          {projects[current].tech && (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {projects[current].tech.split(",").map((tech, idx) => (
+                <span
+                  key={idx}
+                  className="text-xs px-3 py-1 rounded-full bg-slate-700 text-gray-200"
+                >
+                  {tech.trim()}
+                </span>
               ))}
             </div>
+          )}
+
+          {/* Impact */}
+          {projects[current].impact && (
+            <p className="text-sm text-green-400 mb-8">
+              Impact: {projects[current].impact}
+            </p>
+          )}
+
+          <div>
+            <a
+              href={projects[current].link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-7 py-3 bg-purple-600 rounded-xl hover:bg-purple-700 transition font-bold group"
+            >
+              Explore Project
+              <span className="ml-2 group-hover:translate-x-1 transition-transform">
+                →
+              </span>
+            </a>
           </div>
-        </motion.section>
+        </div>
+      </motion.div>
+    </AnimatePresence>
+
+    {/* Navigation Dots */}
+    <div className="flex justify-center items-center gap-3 mt-10">
+      {projects.map((_, i) => (
+        <button
+          key={i}
+          onClick={() => setCurrent(i)}
+          aria-label={`View project ${i + 1}`}
+          className="group focus:outline-none"
+        >
+          <motion.span
+            layout
+            animate={{ width: i === current ? 36 : 12 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className={`block h-2 rounded-full ${
+              i === current
+                ? "bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,0.7)]"
+                : "bg-slate-600 group-hover:bg-slate-400"
+            }`}
+          />
+        </button>
+      ))}
+    </div>
+  </div>
+</motion.section>
+
 
         {/* --- About Me (Restored) --- */}
         <motion.section id="about" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="py-20 text-center">
@@ -386,6 +502,8 @@ function Home() {
         <motion.section id="contact" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="py-20 text-center">
           <div className="bg-gradient-to-r from-blue-900/40 to-purple-900/40 p-12 rounded-3xl border border-slate-700">
             <h2 className="text-4xl font-extrabold mb-6">Let's Connect</h2>
+            <p className='font-bold text-2xl text-red-500'>Open to Full-Time / Internship roles in
+Full-Stack Development, Software Engineering, and AI-driven products.</p>
             <p className="text-xl text-gray-300 mb-10">
               Ready to collaborate on something amazing?
             </p>
@@ -406,6 +524,7 @@ function Home() {
       <footer className="py-8 border-t border-slate-800 text-center text-gray-500">
         <p>© {new Date().getFullYear()} Prathmesh. All rights reserved.</p>
       </footer>
+      </div>
     </div>
   );
 }
