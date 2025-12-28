@@ -447,8 +447,15 @@ function Home() {
             }`}
           />
         </button>
-      ))}
+      ))} 
     </div>
+    <div  className='text-center mt-5'>
+   <Link to="/project" className='text-cyan-400 hover:text-cyan-300 font-bold transition inline-flex items-center'>
+               view all projects <span className="ml-1">→</span>
+              </Link>
+    
+    </div>
+      
   </div>
 </motion.section>
 
