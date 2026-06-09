@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion";
-import { FaReact, FaNodeJs, FaPython, FaDatabase, FaDownload, FaJava } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaPython, FaDatabase, FaDownload, FaJava, FaCode, FaServer, FaCloud, FaBrain, FaTools } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiTensorflow, SiNextdotjs, SiMongodb, SiDocker, SiPostgresql } from "react-icons/si";
 import { Link } from 'react-router-dom';
@@ -16,6 +16,7 @@ import p from "../assets/i2.png"
 import p1 from "../assets/aideas.png"
 import f4 from "../assets/secureslack.png"
 import f3 from "../assets/ipl.png"
+import hemo from "../assets/hemo.png"
 
 // --- Animation Variants ---
 const titleVariants = {
@@ -44,12 +45,20 @@ const iconVariants = (duration) => ({
 });
 
 function Home() {
-  const [Menu, setMenu] = useState(false);
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Projects Array - All 8 included, descriptions refined from Resume where applicable
+  // Projects Array - Refined from Resume
  const projects = [
+  {
+    title: "HemoLink: Thalassemia Patient–Donor Matching System",
+    description:
+      "Building a sponsored cross-platform AI-powered system for patient–donor compatibility analysis and management. Implements real-time matching algorithms, role-based dashboards, and a scalable microservices backend.",
+    tech: "Next.js, React Native, Node.js, Express, PostgreSQL",
+    impact: "Automated matching compatibility and digitized hospital ward workflows",
+    image: hemo,
+    link: "https://github.com/pkkulk/hemo-link-repo",
+  },
   {
     title: "aIDEAS Association Website",
     description:
@@ -62,27 +71,27 @@ function Home() {
   {
     title: "Hospital Food Management System",
     description:
-      "Designed a MERN-based platform to manage hospital food orders, inventory, and staff roles with real-time dashboards and secure access control.",
+      "Designed a MERN-based platform to manage hospital food orders, inventory, and staff roles. Implements role-based access control, real-time inventory analytics, and predictive stock monitoring.",
     tech: "MongoDB, Express, React, Node.js",
-    impact: "Reduced food wastage by 30%",
+    impact: "30% reduction in food wastage tracked",
     image: f,
     link: "https://mern-stack-hospital-food-management-system-frontend.vercel.app",
   },
   {
-    title: "IPL Analytics Dashboard",
+    title: "IPL Cricket Analysis Dashboard",
     description:
-      "Built an interactive analytics dashboard to visualize IPL team and player performance across seasons using optimized APIs.",
-    tech: "Next.js, Recharts, MongoDB",
-    impact: "40% faster query response time",
+      "Built a high-performance analytics dashboard for IPL data visualization using Next.js and REST APIs. Features dynamic filtering and comparative team analysis with indexing and caching to optimize query speed.",
+    tech: "Next.js, Recharts, Tailwind CSS, MongoDB, Node.js",
+    impact: "40% faster query response times with sub-100ms render latency",
     image: f3,
     link: "https://ipl-dashboard2.vercel.app/teams",
   },
   {
-    title: "Heart Failure Detection System",
+    title: "Heart Failure Risk Predictor",
     description:
-      "Developed an AI-powered clinical decision support system to predict heart failure risk using medical parameters.",
-    tech: "Python, scikit-learn, Streamlit",
-    impact: "Real-time ML predictions",
+      "Developed an AI-powered clinical decision support system to predict heart failure risk based on biomarkers. Trained classification models using scikit-learn, integrating an intuitive interface for real-time patient insights.",
+    tech: "Python, scikit-learn, Streamlit, Pandas",
+    impact: "Trained classification model deployed as cloud-hosted web application",
     image: f5,
     link: "https://deployedheartfailure-jkwf8r9tujutnt9beinksw.streamlit.app/",
   },
@@ -137,59 +146,7 @@ function Home() {
   return (
     <div className='min-h-screen bg-slate-900 text-white selection:bg-cyan-500/30 '>
       
-      {/* --- Navigation --- */}
-    <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-lg supports-[backdrop-filter]:bg-slate-900/60">
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='flex justify-between items-center h-20'>
-            {/* Logo */}
-            <div className="text-2xl font-black tracking-tighter text-white">PORTFOLIO</div>
 
-            {/* Desktop Menu */}
-            <div className='hidden lg:flex items-center space-x-8'>
-              {['Home', 'About', 'Project', 'Experience', 'Contact'].map((item) => (
-                <Link 
-                  key={item} 
-                  to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
-                  className='text-sm uppercase tracking-widest font-semibold text-gray-400 hover:text-cyan-400 transition-colors relative group'
-                >
-                  {item}
-                  <span className='absolute bottom-0 left-0 w-full h-0.5 bg-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out'></span>
-                </Link>
-              ))}
-              {/* Resume Button */}
-            
-            </div>
-
-            {/* Mobile Menu Toggle */}
-            <button onClick={() => setMenu(!Menu)} className="lg:hidden text-white text-3xl p-2 rounded-md hover:bg-slate-800 transition">
-              {Menu ? "✕" : "☰"}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu Dropdown */}
-        <AnimatePresence>
-          {Menu && (
-            <motion.div 
-              initial={{ opacity: 0, height: 0 }} 
-              animate={{ opacity: 1, height: "auto" }} 
-              exit={{ opacity: 0, height: 0 }} 
-              className='lg:hidden bg-slate-800 border-b border-slate-700 overflow-hidden'
-            >
-              {['Home', 'About', 'Project', 'Experience', 'Contact'].map((item) => (
-                <Link 
-                  key={item} 
-                  to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
-                  className='block px-6 py-4 text-base font-medium text-white hover:bg-slate-700' 
-                  onClick={() => setMenu(false)}
-                >
-                  {item}
-                </Link>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
 <div className='overflow-x-hidden'>
       <main className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 '>
         
@@ -217,9 +174,7 @@ function Home() {
             </h1>
             
             <p className="text-lg sm:text-xl text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              I'm <span className="text-white font-bold">Prathmesh Kulkarni</span>, a Full Stack Developer specializing in 
-              scalable <span className="text-cyan-400">Node.js</span> architectures and 
-              <span className="text-purple-400"> Machine Learning</span> solutions. 
+              I'm <span className="text-white font-bold">Prathamesh Kulkarni</span>, a Software Engineer at <span className="text-cyan-400 font-bold">Philips</span> and a Full Stack Developer specializing in scalable systems and AI-powered applications.
             </p>
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-5 mt-6">
@@ -285,7 +240,7 @@ function Home() {
               <div className="absolute inset-0 bg-slate-800 rounded-[2rem] border border-slate-700 overflow-hidden shadow-2xl">
                 <img 
                   src={p} 
-                  alt="Prathmesh Profile" 
+                  alt="Prathamesh Profile" 
                   className="w-full h-full object-cover object-top hover:scale-105 transition-all duration-700"
                 />
               </div>
@@ -319,12 +274,12 @@ function Home() {
               <div className="space-y-2 p-4">
                 <h3 className="text-cyan-400 font-bold uppercase tracking-widest text-xs">Education</h3>
                 <p className="text-white font-bold text-xl">B.E. AI & Data Science</p>
-                <p className="text-gray-400 text-sm">SPPU University | SGPA: 8.90</p>
+                <p className="text-gray-400 text-sm">SPPU University | SGPA: 9.25</p>
               </div>
               <div className="space-y-2 p-4 border-t md:border-t-0 md:border-l border-slate-800">
                 <h3 className="text-purple-400 font-bold uppercase tracking-widest text-xs">Experience</h3>
-                <p className="text-white font-bold text-xl">ML Developer Intern</p>
-                <p className="text-gray-400 text-sm">Edunet Foundation (2025)</p>
+                <p className="text-white font-bold text-xl">Software Engineer</p>
+                <p className="text-gray-400 text-sm">Philips HIC</p>
               </div>
               <div className="space-y-2 p-4 border-t md:border-t-0 md:border-l border-slate-800">
                 <h3 className="text-blue-400 font-bold uppercase tracking-widest text-xs">Skills</h3>
@@ -465,10 +420,9 @@ function Home() {
           <h2 className="text-4xl font-extrabold mb-12 border-b-4 border-blue-500 inline-block px-4 pb-2">About Me</h2>
           <div className="max-w-4xl mx-auto bg-slate-800/60 p-10 rounded-3xl border border-slate-700 shadow-xl">
              <p className="text-xl text-gray-300 leading-relaxed">
-              I'm <strong>Prathmesh</strong>, a Full Stack Developer with hands-on experience in developing and deploying modern web applications using 
-              <strong> JavaScript, TypeScript, React.js</strong>, and <strong>Node.js</strong>. 
-              I specialize in building scalable RESTful APIs and managing data using <strong>MongoDB</strong> and <strong>MySQL</strong>.
-              Currently pursuing my B.E. in Artificial Intelligence & Data Science with an <strong>8.90 SGPA</strong>.
+              I'm <strong>Prathamesh</strong>, a Software Engineer at Philips and a Full Stack Developer with hands-on experience in building and maintaining production-grade applications. 
+              I specialize in developing scalable APIs, microservices, and AI-driven products using <strong>JavaScript, TypeScript, React, Next.js</strong>, and <strong>Python</strong>.
+              Currently pursuing my B.E. in Artificial Intelligence & Data Science with a <strong>9.25 SGPA</strong>.
               <br /><br />
               <Link to="/about" className='text-cyan-400 hover:text-cyan-300 font-bold transition inline-flex items-center'>
                 Read full bio <span className="ml-1">→</span>
@@ -483,22 +437,26 @@ function Home() {
             <h2 className="text-4xl font-extrabold inline-block border-b-4 border-green-500 pb-2">Technical Arsenal</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
-              { title: "Programming", items: "Python, JavaScript (ES6+), TypeScript, C++, Java", icon: <FaJava className="text-orange-500"/> },
-              { title: "Frontend", items: "React.js, Next.js, HTML5, Tailwind CSS, Framer Motion", icon: <FaReact className="text-blue-400"/> },
-              { title: "Backend & API", items: "Node.js, Express.js, FastAPI, RESTful Design", icon: <FaNodeJs className="text-green-500"/> },
-              { title: "Databases", items: "PostgreSQL, MongoDB, Supabase, MySQL", icon: <SiMongodb className="text-green-600"/> },
-              { title: "DevOps & Cloud", items: "Docker, Kubernetes, AWS (EC2, S3), CI/CD", icon: <SiDocker className="text-blue-500"/> },
-              { title: "AI & ML", items: "TensorFlow, scikit-learn, pandas, numpy", icon: <SiTensorflow className="text-orange-400"/> }
+              { title: "Programming", items: "JavaScript, TypeScript, Python, C++, Java", icon: <FaCode className="text-cyan-400" /> },
+              { title: "Frontend", items: "React.js, Next.js, React Native, Tailwind CSS, HTML/CSS", icon: <FaCode className="text-pink-400" /> },
+              { title: "Backend & APIs", items: "Node.js, Express.js, FastAPI, REST APIs, Microservices", icon: <FaServer className="text-purple-400" /> },
+              { title: "Databases", items: "PostgreSQL, MongoDB, Supabase, MySQL", icon: <FaDatabase className="text-emerald-400" /> },
+              { title: "DevOps & Cloud", items: "Docker, Kubernetes, AWS (EC2, S3, RDS), CI/CD, Linux, GitHub Actions", icon: <FaCloud className="text-blue-400" /> },
+              { title: "Machine Learning", items: "TensorFlow, scikit-learn, Data Preprocessing, Model Training", icon: <FaBrain className="text-orange-400" /> },
+              { title: "Tools & Methods", items: "Git, GitHub, Agile/Scrum, Postman, Figma", icon: <FaTools className="text-yellow-400" /> },
+              { title: "Core CS", items: "Data Structures, Algorithms, Problem Solving", icon: <FaTools className="text-red-400" /> }
             ].map((skill, index) => (
               <motion.div 
                 key={index} 
                 whileHover={{ y: -5 }}
-                className="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-green-500/50 hover:shadow-lg transition-all"
+                className="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-green-500/50 hover:shadow-lg transition-all flex flex-col justify-between"
               >
-                <div className="text-4xl mb-6">{skill.icon}</div>
-                <h3 className="font-bold text-xl mb-3 text-white">{skill.title}</h3>
+                <div>
+                  <div className="text-4xl mb-6">{skill.icon}</div>
+                  <h3 className="font-bold text-xl mb-3 text-white">{skill.title}</h3>
+                </div>
                 <p className='text-gray-400 text-sm leading-relaxed'>{skill.items}</p>
               </motion.div>
             ))}
@@ -529,7 +487,7 @@ Full-Stack Development, Software Engineering, and AI-driven products.</p>
 
       {/* --- Footer --- */}
       <footer className="py-8 border-t border-slate-800 text-center text-gray-500">
-        <p>© {new Date().getFullYear()} Prathmesh. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Prathamesh. All rights reserved.</p>
       </footer>
       </div>
     </div>
